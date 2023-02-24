@@ -1,0 +1,15 @@
+{
+  "name": "timer.djs",
+  "version": "1.0.5",
+  "description": "A simple timer system.",
+  "main": "./src/index.js",
+  "scripts": {},
+  "repository": "https://github.com/FaonDev/timer.djs",
+  "keywords": [
+    "timer",
+    "cooldown",
+    "discord"
+  ],
+  "author": "Faon",
+  "license": "ISC"
+}
