@@ -1,13 +1,13 @@
 {
-  "name": "timer.djs",
+  "name": "cooldown.djs",
   "version": "1.0.0",
-  "description": "A simple timer system.",
+  "description": "A simple cooldown system.",
   "main": "./src/index.js",
   "scripts": {},
-  "repository": "https://github.com/FaonDev/timer.djs",
+  "repository": "https://github.com/FaonDev/cooldown.djs",
   "keywords": [
     "discord",
-    "timer",
+    "cooldown",
     "cooldown"
   ],
   "author": "Faon",
