@@ -1,44 +1,31 @@
-> **NOTA:** Projeto em versão de testes. Qualquer erro apresentado, considere denunciá-lo.
+# cooldown - Rate limit everything.
 
-## Cooldown.djs
-
-
-**Biblioteca:** [npmjs.com/cooldown.djs](https://www.npmjs.com/package/cooldown.djs)
-
-Cooldown.djs é um simples projeto com a intenção de facilitar a inserção de Cooldown's em aplicações existentes feitas em Discord.js. Livre para o uso de todos os públicos, desde o iniciante ao experiente, com módulos e linhas fáceis de serem compreendidas.
-
--   **Ajustável** - Escolha o intervalo ideal para suas aplicações.
--   **Intuitivo** - Linhas fáceis de serem interpretadas.
--   **Compatível** - Utilize de acordo com o seu projeto.
-
-
-## Instalação
-
-<details>
-<summary>Antes de tudo, utilize seu ambiente de desenvolvimento preferencial.</summary>
-<br>
-</details>
-
-```python
-npm i cooldown.djs # Instalando a biblioteca.
-```
-
-## Exemplo
+Simple tool to make rate limits. Cooldown.djs is a packaged promise setTimeout.
 
 ```js
-const { Timer } = require('cooldown.djs');
-const cd = new Timer();
+const Cooldown = require('cooldown.djs');
 
 (async () => {
-    await cd.set("user-0001", 5000);
-    // Adicionando a variável "user-0001" à lista de espera com intervalo de 5 segundos.
+    await Cooldown('user-0001', 5000);
+    /* Adding variable "user-0001" to waiting list with a 5 second interval. */
 
-    var Cooldown = await cd.get("user-0001");
-    // Verificando se a variável "user-0001" está em espera.
-    // -> Boolean
+    var Hold = await Cooldown('user-0001');
+    /* Checking if the variable "user-0001" is being awaited. */
+    // -> Promise { Boolean }
 
-    if (!Cooldown) {
-        // Conteúdo a ser executado caso o item não esteja em espera.
+    if (!Hold) {
+        /* Content to be executed if the item isn't being awaited. */
     };
 })();
+```
+
+You can also use it in your Discord API based apps.
+
+```js
+run: async ( ... ) => {
+    if (!Cooldown(interaction.user.id)) {
+        // ... Run your normal command.
+    } else interaction.reply('You need to wait before using this command again.');
+    /* Display rate limit warning */
+};
 ```
