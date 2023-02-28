@@ -1,0 +1,14 @@
+{
+  "name": "cooldown.djs",
+  "version": "1.0.1",
+  "description": "A simple cooldown system.",
+  "main": "./src/index.js",
+  "scripts": {},
+  "repository": "https://github.com/FaonDev/cooldown.djs",
+  "keywords": [
+    "rate-limiting",
+    "discord-api"
+  ],
+  "author": "Faon",
+  "license": "ISC"
+}
